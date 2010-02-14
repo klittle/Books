@@ -1,0 +1,1916 @@
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20100201031011)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "author_last_name" varchar(255), "author_first_name" varchar(255), "isbn" integer, "amazon_id" integer, "author_website" varchar(255), "animal_category" boolean, "animal_type" boolean, "price" decimal, "description" text, "cover_picture" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100201031011')[0m
+Migrating to CreateBookcharacters (20100202182938)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "bookcharacters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "animal_category" varchar(255), "animal_type" varchar(255), "book_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100202182938')[0m
+Migrating to CreateAuthors (20100202183013)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "website" varchar(255), "itunes" varchar(255), "author_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100202183013')[0m
+Migrating to CreateReviewers (20100202183123)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "reviewers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "last_name" varchar(255), "first_name" varchar(255), "email" varchar(255), "log_in" varchar(255), "password" integer, "reviewer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100202183123')[0m
+Migrating to CreateReviews (20100202183149)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "review" text, "review_rating" integer, "reviewer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100202183149')[0m
+Migrating to CreateVendors (20100202183227)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" varchar(255), "amazon_id" integer, "isbn" integer, "price" decimal, "amazon_jpg" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100202183227')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("authors")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("bookcharacters")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("books")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("reviewers")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("reviews")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("vendors")[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20100201031011)
+Migrating to CreateBookcharacters (20100202182938)
+Migrating to CreateAuthors (20100202183013)
+Migrating to CreateReviewers (20100202183123)
+Migrating to CreateReviews (20100202183149)
+Migrating to CreateVendors (20100202183227)
+Migrating to AddBookIdToBooks (20100213190800)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "books" ADD "book_id" integer[0m
+  [4;36;1mSQL (101.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100213190800')[0m
+Migrating to AddAuthorIdToBooks (20100213190851)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "books" ADD "author_id" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100213190851')[0m
+Migrating to RemoveAuthorWebsiteFromBooks (20100213191429)
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100213191429')[0m
+Migrating to RemoveAnimalCategoryFromBooks (20100213191458)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100213191458')[0m
+Migrating to RemoveAnimalTypeFromBooks (20100213191530)
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100213191530')[0m
+Migrating to RemovePriceFromBooks (20100213191607)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100213191607')[0m
+Migrating to AddAmazonUrlToVendors (20100213192119)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "vendors" ADD "amazon_url" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100213192119')[0m
+Migrating to RenameReviewerIdFromReviewers (20100213192411)
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100213192411')[0m
+Migrating to AddChildReviewerIdToReviewers (20100213192529)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "reviewers" ADD "child_reviewer_id" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100213192529')[0m
+Migrating to AddChildReviewerNameToReviewers (20100213192609)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "reviewers" ADD "child_reviewer_name" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100213192609')[0m
+Migrating to AddParentReviewerNameToReviewers (20100213192648)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "reviewers" ADD "parent_reviewer_name" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100213192648')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("authors")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("bookcharacters")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("books")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("reviewers")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("reviews")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("vendors")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20100201031011)
+Migrating to CreateBookcharacters (20100202182938)
+Migrating to CreateAuthors (20100202183013)
+Migrating to CreateReviewers (20100202183123)
+Migrating to CreateReviews (20100202183149)
+Migrating to CreateVendors (20100202183227)
+Migrating to AddBookIdToBooks (20100213190800)
+Migrating to AddAuthorIdToBooks (20100213190851)
+Migrating to RemoveAuthorWebsiteFromBooks (20100213191429)
+Migrating to RemoveAnimalCategoryFromBooks (20100213191458)
+Migrating to RemoveAnimalTypeFromBooks (20100213191530)
+Migrating to RemovePriceFromBooks (20100213191607)
+Migrating to AddAmazonUrlToVendors (20100213192119)
+Migrating to RenameReviewerIdFromReviewers (20100213192411)
+Migrating to AddChildReviewerIdToReviewers (20100213192529)
+Migrating to AddChildReviewerNameToReviewers (20100213192609)
+Migrating to AddParentReviewerNameToReviewers (20100213192648)
+Migrating to AddAuthorLastNameToAuthors (20100213204417)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20100201031011)
+Migrating to CreateBookcharacters (20100202182938)
+Migrating to CreateAuthors (20100202183013)
+Migrating to CreateReviewers (20100202183123)
+Migrating to CreateReviews (20100202183149)
+Migrating to CreateVendors (20100202183227)
+Migrating to AddBookIdToBooks (20100213190800)
+Migrating to AddAuthorIdToBooks (20100213190851)
+Migrating to RemoveAuthorWebsiteFromBooks (20100213191429)
+Migrating to RemoveAnimalCategoryFromBooks (20100213191458)
+Migrating to RemoveAnimalTypeFromBooks (20100213191530)
+Migrating to RemovePriceFromBooks (20100213191607)
+Migrating to AddAmazonUrlToVendors (20100213192119)
+Migrating to RenameReviewerIdFromReviewers (20100213192411)
+Migrating to AddChildReviewerIdToReviewers (20100213192529)
+Migrating to AddChildReviewerNameToReviewers (20100213192609)
+Migrating to AddParentReviewerNameToReviewers (20100213192648)
+Migrating to AddAuthorLastNameToAuthors (20100213204417)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20100201031011)
+Migrating to CreateBookcharacters (20100202182938)
+Migrating to CreateAuthors (20100202183013)
+Migrating to CreateReviewers (20100202183123)
+Migrating to CreateReviews (20100202183149)
+Migrating to CreateVendors (20100202183227)
+Migrating to AddBookIdToBooks (20100213190800)
+Migrating to AddAuthorIdToBooks (20100213190851)
+Migrating to RemoveAuthorWebsiteFromBooks (20100213191429)
+Migrating to RemoveAnimalCategoryFromBooks (20100213191458)
+Migrating to RemoveAnimalTypeFromBooks (20100213191530)
+Migrating to RemovePriceFromBooks (20100213191607)
+Migrating to AddAmazonUrlToVendors (20100213192119)
+Migrating to RenameReviewerIdFromReviewers (20100213192411)
+Migrating to AddChildReviewerIdToReviewers (20100213192529)
+Migrating to AddChildReviewerNameToReviewers (20100213192609)
+Migrating to AddParentReviewerNameToReviewers (20100213192648)
+Migrating to AddAuthorLastNameToAuthors1 (20100213204610)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such table: authors1s: ALTER TABLE "authors1s" ADD "author_last_name" varchar(255)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20100201031011)
+Migrating to CreateBookcharacters (20100202182938)
+Migrating to CreateAuthors (20100202183013)
+Migrating to CreateReviewers (20100202183123)
+Migrating to CreateReviews (20100202183149)
+Migrating to CreateVendors (20100202183227)
+Migrating to AddBookIdToBooks (20100213190800)
+Migrating to AddAuthorIdToBooks (20100213190851)
+Migrating to RemoveAuthorWebsiteFromBooks (20100213191429)
+Migrating to RemoveAnimalCategoryFromBooks (20100213191458)
+Migrating to RemoveAnimalTypeFromBooks (20100213191530)
+Migrating to RemovePriceFromBooks (20100213191607)
+Migrating to AddAmazonUrlToVendors (20100213192119)
+Migrating to RenameReviewerIdFromReviewers (20100213192411)
+Migrating to AddChildReviewerIdToReviewers (20100213192529)
+Migrating to AddChildReviewerNameToReviewers (20100213192609)
+Migrating to AddParentReviewerNameToReviewers (20100213192648)
+Migrating to AddAuthorLastNameToAuthors (20100213204610)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20100201031011)
+Migrating to CreateBookcharacters (20100202182938)
+Migrating to CreateAuthors (20100202183013)
+Migrating to CreateReviewers (20100202183123)
+Migrating to CreateReviews (20100202183149)
+Migrating to CreateVendors (20100202183227)
+Migrating to AddBookIdToBooks (20100213190800)
+Migrating to AddAuthorIdToBooks (20100213190851)
+Migrating to RemoveAuthorWebsiteFromBooks (20100213191429)
+Migrating to RemoveAnimalCategoryFromBooks (20100213191458)
+Migrating to RemoveAnimalTypeFromBooks (20100213191530)
+Migrating to RemovePriceFromBooks (20100213191607)
+Migrating to AddAmazonUrlToVendors (20100213192119)
+Migrating to RenameReviewerIdFromReviewers (20100213192411)
+Migrating to AddChildReviewerIdToReviewers (20100213192529)
+Migrating to AddChildReviewerNameToReviewers (20100213192609)
+Migrating to AddParentReviewerNameToReviewers (20100213192648)
+Migrating to AddAuthorFirstNameToAuthors (20100213204649)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "authors" ADD "author_first_name" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100213204649')[0m
+Migrating to AddBookIdToAuthors (20100213204755)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "authors" ADD "book_id" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100213204755')[0m
+Migrating to AddAmazonUrlToBooks (20100213223626)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "books" ADD "amazon_url" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100213223626')[0m
+Migrating to AddItunesUrlToBooks (20100213223701)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "books" ADD "itunes_url" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100213223701')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("authors")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("bookcharacters")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("books")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("reviewers")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("reviews")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("vendors")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBooks (20100201031011)
+Migrating to CreateBookcharacters (20100202182938)
+Migrating to CreateAuthors (20100202183013)
+Migrating to CreateReviewers (20100202183123)
+Migrating to CreateReviews (20100202183149)
+Migrating to CreateVendors (20100202183227)
+Migrating to AddBookIdToBooks (20100213190800)
+Migrating to AddAuthorIdToBooks (20100213190851)
+Migrating to RemoveAuthorWebsiteFromBooks (20100213191429)
+Migrating to RemoveAnimalCategoryFromBooks (20100213191458)
+Migrating to RemoveAnimalTypeFromBooks (20100213191530)
+Migrating to RemovePriceFromBooks (20100213191607)
+Migrating to AddAmazonUrlToVendors (20100213192119)
+Migrating to RenameReviewerIdFromReviewers (20100213192411)
+Migrating to AddChildReviewerIdToReviewers (20100213192529)
+Migrating to AddChildReviewerNameToReviewers (20100213192609)
+Migrating to AddParentReviewerNameToReviewers (20100213192648)
+Migrating to AddAuthorFirstNameToAuthors (20100213204649)
+Migrating to AddBookIdToAuthors (20100213204755)
+Migrating to AddAmazonUrlToBooks (20100213223626)
+Migrating to AddItunesUrlToBooks (20100213223701)
+Migrating to AddAuthorLastNameToAuthors (20100213224529)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "authors" ADD "author_last_name" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100213224529')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("authors")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("bookcharacters")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("books")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("reviewers")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("reviews")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("vendors")[0m
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 14:56:57) [GET]
+  [4;36;1mBook Load (0.7ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 107ms (View: 101, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2010-02-13 14:57:00) [GET]
+Rendering template within layouts/books
+Rendering books/new
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2010-02-13 14:57:03) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"YqwIxDIFiGXhXPxEcBfGG6jEtEQfSio+NkboKxp1H7Y="}
+  [4;35;1mBook Create (0.4ms)[0m   [0mINSERT INTO "books" ("author_last_name", "price", "created_at", "title", "isbn", "animal_category", "updated_at", "amazon_id", "cover_picture", "itunes_url", "author_first_name", "animal_type", "description", "book_id", "author_id", "author_website", "amazon_url") VALUES(NULL, NULL, '2010-02-13 22:57:03', NULL, NULL, NULL, '2010-02-13 22:57:03', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+Redirected to http://localhost:3000/books/1
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/books]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-02-13 14:57:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 14:57:13) [GET]
+  [4;35;1mBook Load (0.7ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-02-13 14:57:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 14:57:17) [GET]
+  [4;35;1mBook Load (0.7ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 15:04:37) [GET]
+  [4;36;1mBook Load (0.7ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+ERROR: compiling _run_erb_app47views47books47index46html46erb RAISED compile error
+/Users/klittle/Desktop/Books/app/views/books/index.html.erb:9: syntax error, unexpected ':', expecting ')'
+...at(( f.text_field	:title 				:author_last_name   :author_fir...
+                 	       				 ^
+Function body:           def _run_erb_app47views47books47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing books</h1>\n\n<table>\n  <tr>\n  </tr>\n\n"
+
+
+
+
+
+;  @books.each do |book| ; @output_buffer.concat "\n\t<p>\n\t"
+
+; @output_buffer.concat(( f.text_field	:title 				:author_last_name   :author_first_name ).to_s); @output_buffer.concat "\n\t</p>\n\t\n  <tr>\n    <td>"
+
+
+
+; @output_buffer.concat(( link_to 'Show', book ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Edit', edit_book_path(book) ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+
+;  end ; @output_buffer.concat "\n</table>\n\n<br />\n\n"
+
+
+
+
+; @output_buffer.concat(( link_to 'New book', new_book_path ).to_s); @output_buffer.concat "\n\n\n"
+
+
+;  form_for @album, :html => {:multipart => true} do |f| ; @output_buffer.concat "\n  <p>\n    "
+
+; @output_buffer.concat(( f.label :name ).to_s); @output_buffer.concat "\n    "
+; @output_buffer.concat(( f.text_field :name ).to_s); @output_buffer.concat "\n  </p>\n  \n  <p>\n    "
+
+
+
+; @output_buffer.concat "\n    "
+; @output_buffer.concat "\n  </p>\n\n  "
+
+
+; @output_buffer.concat(( f.submit "Create" ).to_s); @output_buffer.concat "\n"
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat(( link_to "all", albums_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/klittle/Desktop/Books/app/views/books/index.html.erb:42:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/klittle/Desktop/Books/app/controllers/books_controller.rb:7:in `index'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/klittle/Desktop/Books/app/views/books/index.html.erb:9: syntax error, unexpected ':', expecting ')'
+...at(( f.text_field	:title 				:author_last_name   :author_fir...
+                 	       				 ^) on line #9 of app/views/books/index.html.erb:
+6: 
+7: <% @books.each do |book| %>
+8: 	<p>
+9: 	<%= f.text_field	:title 				:author_last_name   :author_first_name %>
+10: 	</p>
+11: 	
+12:   <tr>
+
+    app/views/books/index.html.erb:42:in `compile!'
+    app/controllers/books_controller.rb:7:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (52.5ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 15:05:49) [GET]
+  [4;35;1mBook Load (0.7ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x1011b1b68>) on line #9 of app/views/books/index.html.erb:
+6: 
+7: <% @books.each do |book| %>
+8: 	<p>
+9: 	<%= f.string	:title %>
+10: 	</p>
+11: 	
+12:   <tr>
+
+    app/views/books/index.html.erb:9
+    app/views/books/index.html.erb:7:in `each'
+    app/views/books/index.html.erb:7
+    app/controllers/books_controller.rb:7:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 15:06:13) [GET]
+  [4;36;1mBook Load (0.7ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+
+ActionView::TemplateError (undefined method `string' for #<ActionView::Base:0x10159d498>) on line #9 of app/views/books/index.html.erb:
+6: 
+7: <% @books.each do |book| %>
+8: 	<p>
+9: 	<%= string	:title %>
+10: 	</p>
+11: 	
+12:   <tr>
+
+    app/views/books/index.html.erb:9
+    app/views/books/index.html.erb:7:in `each'
+    app/views/books/index.html.erb:7
+    app/controllers/books_controller.rb:7:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 15:08:52) [GET]
+  [4;35;1mBook Load (0.7ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-02-13 15:08:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 15:08:58) [GET]
+  [4;35;1mBook Load (0.7ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#new (for 127.0.0.1 at 2010-02-13 15:09:06) [GET]
+Rendering template within layouts/books
+Rendering books/new
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing BooksController#create (for 127.0.0.1 at 2010-02-13 15:09:08) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"YqwIxDIFiGXhXPxEcBfGG6jEtEQfSio+NkboKxp1H7Y="}
+  [4;36;1mBook Create (0.3ms)[0m   [0;1mINSERT INTO "books" ("author_last_name", "price", "created_at", "title", "isbn", "animal_category", "updated_at", "amazon_id", "cover_picture", "itunes_url", "author_first_name", "animal_type", "description", "book_id", "author_id", "author_website", "amazon_url") VALUES(NULL, NULL, '2010-02-13 23:09:08', NULL, NULL, NULL, '2010-02-13 23:09:08', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+Redirected to http://localhost:3000/books/2
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/books]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-02-13 15:09:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 2) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/books/2]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 18:36:14) [GET]
+
+SyntaxError (/Users/klittle/Desktop/Books/app/models/book.rb:8: syntax error, unexpected ':', expecting kEND
+  has_one: :author
+          ^
+/Users/klittle/Desktop/Books/app/models/book.rb:9: syntax error, unexpected ':', expecting kEND
+  has_many: :bookcharacter
+           ^):
+  app/controllers/books_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (80.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 18:38:45) [GET]
+  [4;36;1mBook Load (1.0ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 145ms (View: 11, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-02-13 18:38:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 18:38:50) [GET]
+  [4;36;1mBook Load (0.9ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-02-13 18:38:56) [GET]
+  Parameters: {"id"=>"index"}
+  [4;35;1mBook Load (0.1ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Book with ID=index):
+  app/controllers/books_controller.rb:16:in `show'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-02-13 18:39:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/edit
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/books/1/edit]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-02-13 18:39:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-02-13 18:39:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/edit
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/books/1/edit]
+  [4;36;1mAuthor Create (0.5ms)[0m   [0;1mINSERT INTO "authors" ("author_last_name", "created_at", "updated_at", "website", "author_first_name", "author_id", "book_id", "itunes") VALUES('Munson', '2010-02-14 02:42:34', '2010-02-14 02:42:34', 'http://www.enemypie.com/', 'Derek', 1, NULL, NULL)[0m
+  [4;35;1mBook Create (0.3ms)[0m   [0mINSERT INTO "books" ("author_last_name", "price", "created_at", "title", "isbn", "animal_category", "updated_at", "amazon_id", "cover_picture", "itunes_url", "author_first_name", "animal_type", "description", "book_id", "author_id", "author_website", "amazon_url") VALUES(NULL, 10.87, '2010-02-14 02:42:34', 'Enemy Pie', 978, NULL, '2010-02-14 02:42:34', 1266096933, NULL, 'http://itunes.apple.com/us/app/id355474406?mt=8', NULL, NULL, 'In this funny yet endearing story, one little boy learns an effective recipes for turning your best enemy into your best friend. Accompanied by charming illustrations, Enemy Pie serves up a sweet lesson in the difficulties and ultimate rewards of making new friends.', 1, 1, NULL, 'http://www.amazon.com/Enemy-Pie-Reading-Rainbow-book/dp/081182778X/ref=sr_1_1?ie=UTF8&s=books&qid=http://www.amazon.com/Enemy-Pie-Reading-Rainbow-book/dp/081182778X/ref=sr_1_1?ie=UTF8&s=books&qid=1266096933&sr=1-1&sr=1-1')[0m
+  [4;36;1mAuthor Create (0.7ms)[0m   [0;1mINSERT INTO "authors" ("author_last_name", "created_at", "updated_at", "website", "author_first_name", "author_id", "book_id", "itunes") VALUES('Munson', '2010-02-14 02:43:28', '2010-02-14 02:43:28', 'http://www.enemypie.com/', 'Derek', 1, NULL, NULL)[0m
+  [4;35;1mBook Create (0.4ms)[0m   [0mINSERT INTO "books" ("author_last_name", "price", "created_at", "title", "isbn", "animal_category", "updated_at", "amazon_id", "cover_picture", "itunes_url", "author_first_name", "animal_type", "description", "book_id", "author_id", "author_website", "amazon_url") VALUES(NULL, 10.87, '2010-02-14 02:43:28', 'Enemy Pie', 978, NULL, '2010-02-14 02:43:28', 1266096933, NULL, 'http://itunes.apple.com/us/app/id355474406?mt=8', NULL, NULL, 'In this funny yet endearing story, one little boy learns an effective recipes for turning your best enemy into your best friend. Accompanied by charming illustrations, Enemy Pie serves up a sweet lesson in the difficulties and ultimate rewards of making new friends.', 1, 2, NULL, 'http://www.amazon.com/Enemy-Pie-Reading-Rainbow-book/dp/081182778X/ref=sr_1_1?ie=UTF8&s=books&qid=http://www.amazon.com/Enemy-Pie-Reading-Rainbow-book/dp/081182778X/ref=sr_1_1?ie=UTF8&s=books&qid=1266096933&sr=1-1&sr=1-1')[0m
+  [4;36;1mAuthor Create (0.5ms)[0m   [0;1mINSERT INTO "authors" ("author_last_name", "created_at", "updated_at", "website", "author_first_name", "author_id", "book_id", "itunes") VALUES('Munson', '2010-02-14 02:44:15', '2010-02-14 02:44:15', 'http://www.enemypie.com/', 'Derek', 1, NULL, NULL)[0m
+  [4;35;1mBook Create (0.4ms)[0m   [0mINSERT INTO "books" ("author_last_name", "price", "created_at", "title", "isbn", "animal_category", "updated_at", "amazon_id", "cover_picture", "itunes_url", "author_first_name", "animal_type", "description", "book_id", "author_id", "author_website", "amazon_url") VALUES(NULL, 10.87, '2010-02-14 02:44:15', 'Enemy Pie', 978, NULL, '2010-02-14 02:44:15', 1266096933, NULL, 'http://itunes.apple.com/us/app/id355474406?mt=8', NULL, NULL, 'In this funny yet endearing story, one little boy learns an effective recipes for turning your best enemy into your best friend. Accompanied by charming illustrations, Enemy Pie serves up a sweet lesson in the difficulties and ultimate rewards of making new friends.', 1, 3, NULL, 'http://www.amazon.com/Enemy-Pie-Reading-Rainbow-book/dp/081182778X/ref=sr_1_1?ie=UTF8&s=books&qid=http://www.amazon.com/Enemy-Pie-Reading-Rainbow-book/dp/081182778X/ref=sr_1_1?ie=UTF8&s=books&qid=1266096933&sr=1-1&sr=1-1')[0m
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 18:44:26) [GET]
+  [4;35;1mBook Load (1.2ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 84ms (View: 78, DB: 1) | 200 OK [http://localhost/books]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 18:44:40) [GET]
+
+ActionController::RoutingError (No route matches "/author" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 18:44:45) [GET]
+
+ActionController::RoutingError (No route matches "/authors" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-02-13 18:44:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.4ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-02-13 18:44:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBook Load (0.3ms)[0m   [0mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/edit
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/books/1/edit]
+
+
+Processing BooksController#show (for 127.0.0.1 at 2010-02-13 18:44:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.3ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/show
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/books/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 18:45:13) [GET]
+
+ActionController::RoutingError (No route matches "/authors/1" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 18:45:20) [GET]
+
+ActionController::RoutingError (No route matches "/author/1" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 18:46:05) [GET]
+
+ActionController::RoutingError (No route matches "/author/index" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 18:46:10) [GET]
+
+ActionController::RoutingError (No route matches "/authors/index" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mAuthor Create (0.5ms)[0m   [0;1mINSERT INTO "authors" ("author_last_name", "created_at", "updated_at", "website", "author_first_name", "author_id", "book_id", "itunes") VALUES('Munson', '2010-02-14 03:23:33', '2010-02-14 03:23:33', 'http://www.enemypie.com/', 'Derek', 1, NULL, NULL)[0m
+  [4;35;1mBook Create (0.4ms)[0m   [0mINSERT INTO "books" ("author_last_name", "price", "created_at", "title", "isbn", "animal_category", "updated_at", "amazon_id", "cover_picture", "itunes_url", "author_first_name", "animal_type", "description", "book_id", "author_id", "author_website", "amazon_url") VALUES(NULL, 10.87, '2010-02-14 03:23:33', 'Enemy Pie', 978, NULL, '2010-02-14 03:23:33', 1266096933, NULL, 'http://itunes.apple.com/us/app/id355474406?mt=8', NULL, NULL, 'In this funny yet endearing story, one little boy learns an effective recipes for turning your best enemy into your best friend. Accompanied by charming illustrations, Enemy Pie serves up a sweet lesson in the difficulties and ultimate rewards of making new friends.', 1, 4, NULL, 'http://www.amazon.com/Enemy-Pie-Reading-Rainbow-book/dp/081182778X/ref=sr_1_1?ie=UTF8&s=books&qid=http://www.amazon.com/Enemy-Pie-Reading-Rainbow-book/dp/081182778X/ref=sr_1_1?ie=UTF8&s=books&qid=1266096933&sr=1-1&sr=1-1')[0m
+  [4;36;1mAuthor Create (0.3ms)[0m   [0;1mINSERT INTO "authors" ("author_last_name", "created_at", "updated_at", "website", "author_first_name", "author_id", "book_id", "itunes") VALUES('Carle', '2010-02-14 03:23:33', '2010-02-14 03:23:33', NULL, 'Eric', NULL, NULL, NULL)[0m
+  [4;35;1mBook Create (0.3ms)[0m   [0mINSERT INTO "books" ("author_last_name", "price", "created_at", "title", "isbn", "animal_category", "updated_at", "amazon_id", "cover_picture", "itunes_url", "author_first_name", "animal_type", "description", "book_id", "author_id", "author_website", "amazon_url") VALUES(NULL, 7.91, '2010-02-14 03:23:33', 'The Very Hungry Caterpillar', 978, NULL, '2010-02-14 03:23:33', 1266097868, NULL, 'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewAudiobook?id=280363317&s=143441', NULL, NULL, 'Children will be fascinated by the caterpillar‚ varied diet and miraculous transformation into a beautiful butterfly.', 5, 5, NULL, 'http://www.amazon.com/Very-Hungry-Caterpillar-Eric-Carle/dp/0399226907/ref=sr_1_1?ie=UTF8&s=books&qid=1266097868&sr=1-1')[0m
+  [4;36;1mBook Create (0.3ms)[0m   [0;1mINSERT INTO "books" ("author_last_name", "price", "created_at", "title", "isbn", "animal_category", "updated_at", "amazon_id", "cover_picture", "itunes_url", "author_first_name", "animal_type", "description", "book_id", "author_id", "author_website", "amazon_url") VALUES(NULL, 9.99, '2010-02-14 03:23:33', 'The Very Quiet Cricket', 978, NULL, '2010-02-14 03:23:33', 1266098070, NULL, NULL, NULL, NULL, 'Your child will delight in the surprise at the end of the book and in knowing that every creature can find its voice, however silent or joyous.', 6, 5, NULL, 'http://www.amazon.com/Very-Quiet-Cricket-Eric-Carle/dp/0399218858/ref=sr_1_1?ie=UTF8&s=books&qid=1266098070&sr=1-1')[0m
+  [4;35;1mAuthor Create (0.3ms)[0m   [0mINSERT INTO "authors" ("author_last_name", "created_at", "updated_at", "website", "author_first_name", "author_id", "book_id", "itunes") VALUES('Boynton', '2010-02-14 03:23:33', '2010-02-14 03:23:33', NULL, 'Sandra', NULL, NULL, NULL)[0m
+  [4;36;1mBook Create (0.3ms)[0m   [0;1mINSERT INTO "books" ("author_last_name", "price", "created_at", "title", "isbn", "animal_category", "updated_at", "amazon_id", "cover_picture", "itunes_url", "author_first_name", "animal_type", "description", "book_id", "author_id", "author_website", "amazon_url") VALUES(NULL, 7.91, '2010-02-14 03:23:33', 'Moo, Baa, La La La', 978, NULL, '2010-02-14 03:23:33', 1266097571, NULL, 'http://www.amazon.com/Moo-Baa-Sandra-Boynton/dp/067144901X/ref=sr_1_8?ie=UTF8&s=books&qid=1266097571&sr=1-8', NULL, NULL, 'This is a fun rhyming book with brilliant illustrations and animal sounds for you to make.', 5, 6, NULL, NULL)[0m
+  [4;35;1mAuthor Create (0.3ms)[0m   [0mINSERT INTO "authors" ("author_last_name", "created_at", "updated_at", "website", "author_first_name", "author_id", "book_id", "itunes") VALUES('Brown', '2010-02-14 03:23:33', '2010-02-14 03:23:33', NULL, 'Margaret Wise', NULL, NULL, NULL)[0m
+  [4;36;1mBook Create (0.3ms)[0m   [0;1mINSERT INTO "books" ("author_last_name", "price", "created_at", "title", "isbn", "animal_category", "updated_at", "amazon_id", "cover_picture", "itunes_url", "author_first_name", "animal_type", "description", "book_id", "author_id", "author_website", "amazon_url") VALUES(NULL, 8.99, '2010-02-14 03:23:33', 'The Runaway Bunny', 978, NULL, '2010-02-14 03:23:33', 1266097741, NULL, NULL, NULL, NULL, 'A little bunny keeps running away from his mother in an imaginative game of verbal hide-and-seek. Children will be profoundly comforted by this lovingly steadfast mother who finds her child every time.', 4, 7, NULL, 'http://www.amazon.com/Runaway-Bunny-Margaret-Wise-Brown/dp/0060775823/ref=sr_1_1?ie=UTF8&s=books&qid=1266097741&sr=1-1')[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 19:27:25) [GET]
+
+ActionController::RoutingError (No route matches "/authors/index" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 19:27:26) [GET]
+
+ActionController::RoutingError (No route matches "/authors/index" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 19:27:39) [GET]
+  [4;35;1mBook Load (1.9ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 35ms (View: 28, DB: 2) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 19:29:36) [GET]
+  [4;36;1mBook Load (1.8ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 36ms (View: 28, DB: 2) | 200 OK [http://localhost/books]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 19:29:44) [GET]
+
+ActionController::RoutingError (No route matches "/authors" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 19:29:51) [GET]
+
+ActionController::RoutingError (No route matches "/authors" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-02-13 19:36:32) [GET]
+  [4;35;1mAuthor Load (1.2ms)[0m   [0mSELECT * FROM "authors" [0m
+Rendering template within layouts/authors
+Rendering authors/index
+Completed in 36ms (View: 30, DB: 1) | 200 OK [http://localhost/authors]
+
+
+Processing AuthorsController#new (for 127.0.0.1 at 2010-02-13 19:36:37) [GET]
+Rendering template within layouts/authors
+Rendering authors/new
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/authors/new]
+
+
+Processing AuthorsController#create (for 127.0.0.1 at 2010-02-13 19:37:12) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"YqwIxDIFiGXhXPxEcBfGG6jEtEQfSio+NkboKxp1H7Y="}
+  [4;36;1mAuthor Create (0.6ms)[0m   [0;1mINSERT INTO "authors" ("author_last_name", "created_at", "updated_at", "website", "author_first_name", "author_id", "book_id", "itunes") VALUES(NULL, '2010-02-14 03:37:12', '2010-02-14 03:37:12', NULL, NULL, NULL, NULL, NULL)[0m
+Redirected to http://localhost:3000/authors/8
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/authors]
+
+
+Processing AuthorsController#show (for 127.0.0.1 at 2010-02-13 19:37:12) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 8) [0m
+Rendering template within layouts/authors
+Rendering authors/show
+Completed in 70ms (View: 63, DB: 0) | 200 OK [http://localhost/authors/8]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-02-13 19:37:15) [GET]
+  [4;36;1mAuthor Load (1.1ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Rendering template within layouts/authors
+Rendering authors/index
+Completed in 28ms (View: 22, DB: 1) | 200 OK [http://localhost/authors]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 19:38:03) [GET]
+  [4;35;1mBook Load (1.9ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 37ms (View: 29, DB: 2) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#edit (for 127.0.0.1 at 2010-02-13 19:38:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBook Load (0.4ms)[0m   [0;1mSELECT * FROM "books" WHERE ("books"."id" = 1) [0m
+Rendering template within layouts/books
+Rendering books/edit
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://localhost/books/1/edit]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-13 19:38:25) [GET]
+  [4;35;1mBook Load (1.8ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Completed in 35ms (View: 28, DB: 2) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-14 10:44:20) [GET]
+  [4;36;1mBook Load (2.0ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+ERROR: compiling _run_erb_app47views47books47index46html46erb RAISED compile error
+/Users/klittle/Desktop/Books/app/views/books/index.html.erb:42: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47books47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n"
+; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat "\n  <p>"
+; @output_buffer.concat "</p>\n"
+; @output_buffer.concat "\n\n\n"
+
+
+; @output_buffer.concat "\n\n\n\n\n<h1>Listing books</h1>\n\n\n"
+
+
+
+
+
+
+
+; @output_buffer.concat(( render (:partial => 'book') ).to_s); @output_buffer.concat "\n\n  <tr>\n  </tr>\n\n"
+
+
+
+
+; @output_buffer.concat "\n\t<p>\n\t"
+
+; @output_buffer.concat "\n\t</p>\n\t\n  <tr>\n    <td>"
+
+
+
+; @output_buffer.concat(( link_to 'Show', book ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Edit', edit_book_path(book) ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+
+;  end ; @output_buffer.concat "\n\n\n<br />\n\n"
+
+
+
+
+; @output_buffer.concat(( link_to 'New book', new_book_path ).to_s); @output_buffer.concat "\n\n\n\n"
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/klittle/Desktop/Books/app/views/books/index.html.erb:42:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/klittle/Desktop/Books/app/controllers/books_controller.rb:7:in `index'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/klittle/Desktop/Books/app/views/books/index.html.erb:42: syntax error, unexpected kENSURE, expecting $end) on line #42 of app/views/books/index.html.erb:
+
+    app/views/books/index.html.erb:42:in `compile!'
+    app/controllers/books_controller.rb:7:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-14 10:46:49) [GET]
+  [4;35;1mBook Load (1.8ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+ERROR: compiling _run_erb_app47views47books47_book46html46erb_locals_book_object RAISED compile error
+/Users/klittle/Desktop/Books/app/views/books/_book.html.erb:62: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47books47_book46html46erb_locals_book_object(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];book = local_assigns[:book];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing books</h1>\n\n\n\n\n\n<div class='book'>\n\t\n\t<div class=\"book_heading\">\n\t\t<div class=\"sorter\">\n\t\t\tsort\n\t\t</div>\n\t\t<span class='header'>\tBooks  </span>\n\t<span class=\"paginate\">\n\t\t"
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat "\n\t\t</span>\n\t\t\n\t</div>\n\t\t"
+
+
+
+;  @books.each do |book|; @output_buffer.concat "\n\n\t<div class='small_book'>\n\n\t\t\t<div class='small_book_cover'>\n\t\t\t\t"
+
+
+
+
+; @output_buffer.concat(( image_tag album.photo.url).to_s); @output_buffer.concat "\n\t\t\t\t\n\t\t\t\t</div>\n\t\t\t<div class='book_title'>\n\t\t\t\t\t\t\t"
+
+
+
+; @output_buffer.concat((h book.title ).to_s); @output_buffer.concat "\n\t\t\t</div>\n\t\t\t<div class='book_author'>\n\t\t\t\t\t\t\t"
+
+
+; @output_buffer.concat((h author_last_name ).to_s); @output_buffer.concat "\n\t\t\t</div>\n\t\t\t<div class='book_price'>\n\t\t\t\t\t\t\t"
+
+
+; @output_buffer.concat((h price ).to_s); @output_buffer.concat "\n\t\t\t</div>\n\t</div>\n\t"
+
+
+;  end ; @output_buffer.concat "\n\t\n\t<div class= 'float_fix'>&nbsp;\n\t\t\n\t</div>\n\t\n</div>\n\n<br>\n\t\n  <tr>\n    <td>"
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat(( link_to 'Show', book ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Edit', edit_book_path(book) ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+
+;  end ; @output_buffer.concat "\n\n\n<br />\n\n"
+
+
+
+
+; @output_buffer.concat(( link_to 'New book', new_book_path ).to_s); @output_buffer.concat "\n\n\n\n"
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/klittle/Desktop/Books/app/views/books/_book.html.erb:62:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:267:in `render'
+/Users/klittle/Desktop/Books/app/views/books/index.html.erb:17:in `_run_erb_app47views47books47index46html46erb'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:306:in `with_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:30:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/klittle/Desktop/Books/app/controllers/books_controller.rb:7:in `index'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/klittle/Desktop/Books/app/views/books/_book.html.erb:62: syntax error, unexpected kENSURE, expecting $end) on line #62 of app/views/books/_book.html.erb:
+
+    app/views/books/_book.html.erb:62:in `compile!'
+    app/views/books/index.html.erb:17
+    app/controllers/books_controller.rb:7:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (112.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-14 10:47:42) [GET]
+  [4;36;1mBook Load (1.9ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+ERROR: compiling _run_erb_app47views47books47_book46html46erb_locals_book_object RAISED compile error
+/Users/klittle/Desktop/Books/app/views/books/_book.html.erb:62: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47books47_book46html46erb_locals_book_object(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];book = local_assigns[:book];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing books</h1>\n\n\n\n\n\n<div class='book'>\n\t\n\t<div class=\"book_heading\">\n\t\t<div class=\"sorter\">\n\t\t\tsort\n\t\t</div>\n\t\t<span class='header'>\tBooks  </span>\n\t<span class=\"paginate\">\n\t\t"
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat "\n\t\t</span>\n\t\t\n\t</div>\n\t\t"
+
+
+
+;  @books.each do |book|; @output_buffer.concat "\n\n\t<div class='small_book'>\n\n\t\t\t<div class='small_book_cover'>\n\t\t\t\t"
+
+
+
+
+; @output_buffer.concat(( image_tag album.photo.url).to_s); @output_buffer.concat "\n\t\t\t\t\n\t\t\t\t</div>\n\t\t\t<div class='book_title'>\n\t\t\t\t\t\t\t"
+
+
+
+; @output_buffer.concat((h book.title ).to_s); @output_buffer.concat "\n\t\t\t</div>\n\t\t\t<div class='book_author'>\n\t\t\t\t\t\t\t"
+
+
+; @output_buffer.concat((h author_last_name ).to_s); @output_buffer.concat "\n\t\t\t</div>\n\t\t\t<div class='book_price'>\n\t\t\t\t\t\t\t"
+
+
+; @output_buffer.concat((h price ).to_s); @output_buffer.concat "\n\t\t\t</div>\n\t</div>\n\t"
+
+
+;  end ; @output_buffer.concat "\n\t\n\t<div class= 'float_fix'>&nbsp;\n\t\t\n\t</div>\n\t\n</div>\n\n<br>\n\t\n  <tr>\n    <td>"
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat(( link_to 'Show', book ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Edit', edit_book_path(book) ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+
+;  end ; @output_buffer.concat "\n\n\n</br>\n\n"
+
+
+
+
+; @output_buffer.concat(( link_to 'New book', new_book_path ).to_s); @output_buffer.concat "\n\n\n\n"
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/klittle/Desktop/Books/app/views/books/_book.html.erb:62:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:267:in `render'
+/Users/klittle/Desktop/Books/app/views/books/index.html.erb:17:in `_run_erb_app47views47books47index46html46erb'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:306:in `with_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:30:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/klittle/Desktop/Books/app/controllers/books_controller.rb:7:in `index'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/klittle/Desktop/Books/app/views/books/_book.html.erb:62: syntax error, unexpected kENSURE, expecting $end) on line #62 of app/views/books/_book.html.erb:
+
+    app/views/books/_book.html.erb:62:in `compile!'
+    app/views/books/index.html.erb:17
+    app/controllers/books_controller.rb:7:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (112.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-14 10:47:44) [GET]
+  [4;35;1mBook Load (1.9ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+ERROR: compiling _run_erb_app47views47books47_book46html46erb_locals_book_object RAISED compile error
+/Users/klittle/Desktop/Books/app/views/books/_book.html.erb:62: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47books47_book46html46erb_locals_book_object(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];book = local_assigns[:book];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing books</h1>\n\n\n\n\n\n<div class='book'>\n\t\n\t<div class=\"book_heading\">\n\t\t<div class=\"sorter\">\n\t\t\tsort\n\t\t</div>\n\t\t<span class='header'>\tBooks  </span>\n\t<span class=\"paginate\">\n\t\t"
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat "\n\t\t</span>\n\t\t\n\t</div>\n\t\t"
+
+
+
+;  @books.each do |book|; @output_buffer.concat "\n\n\t<div class='small_book'>\n\n\t\t\t<div class='small_book_cover'>\n\t\t\t\t"
+
+
+
+
+; @output_buffer.concat(( image_tag album.photo.url).to_s); @output_buffer.concat "\n\t\t\t\t\n\t\t\t\t</div>\n\t\t\t<div class='book_title'>\n\t\t\t\t\t\t\t"
+
+
+
+; @output_buffer.concat((h book.title ).to_s); @output_buffer.concat "\n\t\t\t</div>\n\t\t\t<div class='book_author'>\n\t\t\t\t\t\t\t"
+
+
+; @output_buffer.concat((h author_last_name ).to_s); @output_buffer.concat "\n\t\t\t</div>\n\t\t\t<div class='book_price'>\n\t\t\t\t\t\t\t"
+
+
+; @output_buffer.concat((h price ).to_s); @output_buffer.concat "\n\t\t\t</div>\n\t</div>\n\t"
+
+
+;  end ; @output_buffer.concat "\n\t\n\t<div class= 'float_fix'>&nbsp;\n\t\t\n\t</div>\n\t\n</div>\n\n<br>\n\t\n  <tr>\n    <td>"
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat(( link_to 'Show', book ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Edit', edit_book_path(book) ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+
+;  end ; @output_buffer.concat "\n\n\n</br>\n\n"
+
+
+
+
+; @output_buffer.concat(( link_to 'New book', new_book_path ).to_s); @output_buffer.concat "\n\n\n\n"
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/klittle/Desktop/Books/app/views/books/_book.html.erb:62:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:267:in `render'
+/Users/klittle/Desktop/Books/app/views/books/index.html.erb:17:in `_run_erb_app47views47books47index46html46erb'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:306:in `with_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:30:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/klittle/Desktop/Books/app/controllers/books_controller.rb:7:in `index'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/klittle/Desktop/Books/app/views/books/_book.html.erb:62: syntax error, unexpected kENSURE, expecting $end) on line #62 of app/views/books/_book.html.erb:
+
+    app/views/books/_book.html.erb:62:in `compile!'
+    app/views/books/index.html.erb:17
+    app/controllers/books_controller.rb:7:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-14 10:58:09) [GET]
+  [4;36;1mBook Load (1.9ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Rendered books/_book (8.9ms)
+
+ActionView::TemplateError (undefined local variable or method `book' for #<ActionView::Base:0x10414ee48>) on line #28 of app/views/books/index.html.erb:
+25: 	</p>
+26: 	
+27:   <tr>
+28:     <td><%= link_to 'Show', book %></td>
+29:     <td><%= link_to 'Edit', edit_book_path(book) %></td>
+30:     <td><%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete %></td>
+31:   </tr>
+
+    app/views/books/index.html.erb:28
+    app/controllers/books_controller.rb:7:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-14 10:59:12) [GET]
+  [4;35;1mBook Load (1.9ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Rendered books/_book (8.2ms)
+
+ActionView::TemplateError (undefined local variable or method `book' for #<ActionView::Base:0x10422aa38>) on line #29 of app/views/books/index.html.erb:
+26: 	
+27:   <tr>
+28:     <td><%#= link_to 'Show', book %></td>
+29:     <td><%= link_to 'Edit', edit_book_path(book) %></td>
+30:     <td><%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete %></td>
+31:   </tr>
+32: 
+
+    app/views/books/index.html.erb:29
+    app/controllers/books_controller.rb:7:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (104.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-14 10:59:51) [GET]
+  [4;36;1mBook Load (1.9ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Rendered books/_book (6.8ms)
+
+ActionView::TemplateError (edit_book_url failed to generate from {:action=>"edit", :controller=>"books", :id=>nil}, expected: {:action=>"edit", :controller=>"books"}, diff: {:id=>nil}) on line #29 of app/views/books/index.html.erb:
+26: 	
+27:   <tr>
+28:     <td><%= link_to 'Show', @book %></td>
+29:     <td><%= link_to 'Edit', edit_book_path(@book) %></td>
+30:     <td><%= link_to 'Destroy', @book, :confirm => 'Are you sure?', :method => :delete %></td>
+31:   </tr>
+32: 
+
+    (eval):16:in `edit_book_path'
+    app/views/books/index.html.erb:29
+    app/controllers/books_controller.rb:7:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (123.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-14 11:06:41) [GET]
+  [4;35;1mBook Load (2.0ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+Rendered books/_book (5.4ms)
+Completed in 22ms (View: 14, DB: 2) | 200 OK [http://localhost/books]
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-14 11:08:44) [GET]
+  [4;36;1mBook Load (1.9ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+
+ActionView::TemplateError (undefined local variable or method `author' for #<ActionView::Base:0x104330f40>) on line #31 of app/views/books/_book.html.erb:
+28: 							<%=h book.title %>
+29: 			</div>
+30: 				<div class='book_author'>
+31: 							<%=h author.author_last_name %>
+32: 				</div>
+33: 					<div class='book_price'>
+34: 							<%=h book.price %>
+
+    app/views/books/_book.html.erb:31
+    app/views/books/_book.html.erb:19:in `each'
+    app/views/books/_book.html.erb:19
+    app/views/books/index.html.erb:17
+    app/controllers/books_controller.rb:7:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (193.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-02-14 11:08:59) [GET]
+  [4;35;1mBook Load (1.9ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/books
+Rendering books/index
+
+ActionView::TemplateError (undefined local variable or method `authors' for #<ActionView::Base:0x1043948b0>) on line #31 of app/views/books/_book.html.erb:
+28: 							<%=h book.title %>
+29: 			</div>
+30: 				<div class='book_author'>
+31: 							<%=h authors.author_last_name %>
+32: 				</div>
+33: 					<div class='book_price'>
+34: 							<%=h book.price %>
+
+    app/views/books/_book.html.erb:31
+    app/views/books/_book.html.erb:19:in `each'
+    app/views/books/_book.html.erb:19
+    app/views/books/index.html.erb:17
+    app/controllers/books_controller.rb:7:in `index'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (47.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)

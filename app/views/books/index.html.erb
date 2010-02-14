@@ -1,0 +1,40 @@
+
+<%#= render (:partial => 'album') %>
+
+<%# @albums.each do |album| %>
+  <p><%#= link_to album.name, album %></p>
+<%# end %>
+
+
+<%#= link_to "new album", new_album_path %>
+
+
+
+
+<h1>Listing books</h1>
+
+
+<%= render (:partial => 'book') %>
+
+  <tr>
+  </tr>
+
+<%# @books.each do |book| %>
+	<p>
+	<%#=h book.title %>
+	</p>
+	
+  <tr>
+    <td><%#= link_to 'Show', @book %></td>
+    <td><%#= link_to 'Edit', edit_book_path(@book) %></td>
+    <td><%#= link_to 'Destroy', @book, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+
+
+
+<br />
+
+<%#= link_to 'New book', new_book_path %>
+
+
+

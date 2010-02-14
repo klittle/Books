@@ -1,0 +1,12 @@
+<h1>Editing bookcharacter</h1>
+
+<% form_for(@bookcharacter) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @bookcharacter %> |
+<%= link_to 'Back', bookcharacters_path %>

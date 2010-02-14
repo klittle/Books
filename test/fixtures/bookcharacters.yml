@@ -1,0 +1,53 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# one:
+#   column: value
+#
+# two:
+#   column: value
+
+
+one:
+    animal_category: four legged
+    animal_type: bear
+    book_id: 2
+        
+two:
+    animal_category: four legged
+    animal_type: cow
+    book_id: 3
+        
+three:
+    animal_category: four legged
+    animal_type: sheep
+    book_id: 3
+        
+four:
+    animal_category: four legged
+    animal_type: rabbit
+    book_id: 4
+        
+five:
+    animal_category: insect
+    animal_type: caterpiller
+    book_id: 5
+        
+six:
+    animal_category: insect
+    animal_type: butterfly
+    book_id: 5
+    four:
+        animal_category: four legged
+        animal_type: rabbit
+        book_id: 4
+
+    seven:
+        animal_category: insect
+        animal_type: cricket
+        book_id: 6
+
+    eight:
+        animal_category: two legged
+        animal_type: boy
+        book_id: 1
+        

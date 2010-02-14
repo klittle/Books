@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# one:
+#   column: value
+#
+# two:
+#   column: value
+
+
+
+one:
+    
+    author_last_name:   Munson
+    author_first_name:  Derek
+    website: http://www.enemypie.com/
+    itunes: http://itunes.apple.com/us/app/id355474406?mt=8
+    author_id: 1
+    book_id:
+        
+two:
+
+            author_last_name:   Carle
+            author_first_name:  Eric
+            website: http://www.eric-carle.com/home.html
+            itunes:
+            author_id: 5
+            book_id:
