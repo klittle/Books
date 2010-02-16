@@ -21,18 +21,23 @@
 	<div class='small_book'>
 
 			<div class='small_book_cover'>
-				<%#= image_tag album.photo.url%>
+				<%#= image_tag book.cover_picture%>
 				
 				</div>
 			<div class='book_title'>
 							<%=h book.title %>
 			</div>
 				<div class='book_author'>
-							<%=h authors.author_last_name %>
+							<%#=h authors.author_last_name %>
 				</div>
 					<div class='book_price'>
 							<%=h book.price %>
 					</div>
+					<div class='book_character'>
+							<%=h book_character.animal_type %>
+					</div>
+					
+					
 	</div>
 	<% end %>
 	
