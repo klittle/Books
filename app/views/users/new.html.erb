@@ -1,0 +1,32 @@
+<h1>Please Sign Up to Enter Reviews in Our System</h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :login %><br />
+    <%= f.text_field :login %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </div>
+  <body>
+    <div id="main">
+      <% if flash[:notice] -%>
+    <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
+  <div>
+  </p>
+<% end %>
+
+
+<%= link_to 'User Log-In', new_session_path %>
+<%= link_to 'Back', users_path %>

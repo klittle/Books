@@ -34,7 +34,7 @@ class BookcharactersController < ApplicationController
 
   # GET /bookcharacters/1/edit
   def edit
-    @bookcharacter = Bookcharacter.find(params[:id])
+    @bookcharacter = Book.Bookcharacter.find(params[:id])
   end
 
   # POST /bookcharacters

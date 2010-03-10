@@ -8,60 +8,7 @@ html, body {
   width: 800px;
 }
 
-.album .breadcrumbs {
-  margin: 20px 0;
-}
 
-.album .album_image {
-  float: left;
-  width: 150px;
-}
-
-.album .about {
-  margin-left: 170px;
-}
-
-.album .about h1 {
-  font-size: 22px;
-  margin-top: 0;
-}
-
-.album .tracks {
-  border-collapse: collapse;
-  font-size: 14px;
-  width: 100%;
-}
-
-.album .tracks th {
-  background-color: #E0E7EE;
-  border: solid 1px silver;
-  padding: 5px 10px;
-}
-
-.album .tracks td {
-  border: solid 1px silver;
-  padding: 5px 10px;
-}
-
-.album .tracks .number {
-  width: 2em;
-  text-align: right;
-}
-
-.upper {
-	background-color:  #E0E7EE;
-	height: 450px;
-
-}
-
-.upper .cover {
-	float: right;
-	color: grey;
-}
-
-.upper .cover img {
-	width: 450px;
-}
 
 .album_list {
 	clear: both;
@@ -96,11 +43,6 @@ html, body {
 .album_list .album_heading a {
 	color:	grey;
 }
-#login_logout {
-	float:	right;
-	color:	#999;
-	font-size:	smaller;
-}
 .navigation {
 	list-style:	none;
 	padding:	5px 0;
@@ -117,6 +59,11 @@ html, body {
 
 /* Styles for main page */
 
+#login_logout {
+	float:	right;
+	color:	#999;
+	font-size:	smaller;
+}
 #banner {
 	background:	#9c9;
 	padding-top:	10px;

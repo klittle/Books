@@ -1,9 +1,25 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :authors
+  map.resources :users
+
+  map.resources :authors, :has_many =>  :books
+  map.resources :authors, :has_many => :bookcharacters, :through => :book_id
 
   map.resources :bookcharacters
 
-  map.resources :books
+  map.resources :books, :has_many =>  :bookcharacters, :through => :book_id
+  
+  map.resources  :animals, :has_many => :bookcharacters 
+  
+  
+  map.resource  :session
+  
+  map.resource  :session, :belongs_to => :users
+  
+  map.resources  :reviewers, :has_many  =>  :reviews
+  
+  map.resources  :books, :has_many => :reviews, :through => :book_id
+  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -2,11 +2,47 @@
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <title>Books of Interest</title>
-  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag 'style' %>
+  <%= javascript_include_tag :defaults, "jquery" %>
 </head>
 <body>
-  <div class="content">
-    <%= yield %>
-  </div>
-</body>
-</html>
+  <div id="header">
+    <div id="login_logout">
+      <% if @current_user %>
+      Logged in as:
+      <%= @current_user.login %>
+      <em><%= link_to "(Logout)", session_path,
+                      :method => :delete %></em>
+      <% else %>
+        <em>Not logged in.</em>
+        <%= link_to 'Login', new_session_path %>
+      <% end %>
+    </div>
+    <body id="books">
+      <div id="banner">
+        <%= image_tag("LLlogohere.jpg") %>
+        <%= @page_title || "Learners Lane Bookshop" %>
+      </div>
+        <div id="columns">
+          <a href="http://localhost:3000/authors">Authors</a><br />
+          <a href="http://localhost:3000/books">Books</a><br />
+          <a href="http://localhost:3000/bookcharacters">Animals in Books</a><br />
+          <a href="http://localhost:3000/users">New User Sign Up</a><br />
+        </div>  
+        <div id="main">
+   <ul id="navigation">
+      <li><%#= link_to 'Home Page', "/books" %></li>
+      <li><%#= link_to 'Find Books about an Animal', bookcharacters_path %></li>
+      <li><%#= link_to 'Submit a Book Review' %></li>
+    </ul>
+   </div>
+    <div id="content">
+      <% if flash[:notice]%>
+      <div class="notice">
+      <%= flash[:notice]%>
+      <% end -%>
+      <%= yield %>
+    </div>
+
+  </body>
+  </html>

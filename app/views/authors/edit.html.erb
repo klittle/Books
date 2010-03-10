@@ -1,6 +1,8 @@
-<h1>Editing author</h1>
+<h1>Editing author </h1>
 
 <% form_for(@author) do |f| %>
+  <%= f.text_field  :author_last_name%>
+  <%= f.text_field  :author_first_name%>
   <%= f.error_messages %>
 
   <p>
@@ -9,4 +11,5 @@
 <% end %>
 
 <%= link_to 'Show', @author %> |
-<%= link_to 'Back', authors_path %>
+<%= link_to 'Back', authors_path %>|
+<%= link_to 'Book Listing', books_path %>

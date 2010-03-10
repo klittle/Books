@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Books: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'application' %>
+</head>
+<body id="books">
+  <div id="banner">
+    <%= image_tag("Learnerslane.jpg") %>
+    <%= @page_title || "Learners Lane Bookshop" %>
+  </div>
+    <div id="columns">
+      <a href="http://localhost:3000/authors">Authors</a><br />
+      <a href="http://localhost:3000/books">Books</a><br />
+      <a href="http://localhost:3000/reviews">Reviews</a><br />
+      <a href="http://localhost:3000/bookcharacters">Animals in Books</a><br /> 
+    </div>  
+    <div id="main">   
+<p style="color: green"><%= flash[:notice] %></p>
+
+      <%= yield :layout%>
+    </div>
+  </div>
+</body>
+</html>

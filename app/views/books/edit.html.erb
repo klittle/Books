@@ -1,8 +1,11 @@
 <h1>Editing book</h1>
 
-<% form_for(@book) do |f| %>
+<% form_for (@book) do |f| %>
   <%= f.error_messages %>
-
+  
+  <%= f.text_field  :title%>
+  <%= f.text_field  :price%>
+   <%= f.text_field :description%>
   <p>
     <%= f.submit 'Update' %>
   </p>

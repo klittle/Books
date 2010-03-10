@@ -1,3 +1,22 @@
 
-<%= link_to 'Edit', edit_author_path(@author) %> |
-<%= link_to 'Back', authors_path %>
+<h1>Listing authors</h1>
+
+<%#= will_paginate @authors%>
+
+
+<% @authors.each do |author| %>
+  <div class="item">
+  <h3>
+  <%= link_to author.name, author %>
+  </h3>
+  </div>
+  
+  <div class="actions">
+    <td><%= link_to 'Back', authors_path %></td>
+    <td><%= link_to 'Edit', edit_author_path(author) %></td>
+    <td><%= link_to 'Destroy', author, :confirm => 'Are you sure?', :method => :delete %></td>
+  </div>
+  #</div> should other div be here instead of after h3
+<% end %>
+
+
