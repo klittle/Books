@@ -9,11 +9,7 @@ class AuthorTest < ActiveSupport::TestCase
   def setup
     #@author = Author.find([:id])
   end
-  
-  def test_dog
-    assert_equal 5, 5
-  end
-  
+    
   
   def test_should_create_author
     author = Author.new
@@ -30,14 +26,22 @@ class AuthorTest < ActiveSupport::TestCase
     
   end
 
-  def test_unique_author
-    # author = Author.new(:author_last_name   => authors(:Munson).author_last_name,
-    author = Author.new(:author_last_name   => "Munson",
+  def test_unique_author_id
+    author = Author.new(:author_last_name   => authors(:Munson).author_last_name,
                         :author_first_name  => "Derek",
                         :author_id          => 1)
                         
     assert !author.save
-    #assert_equal "has already been taken", author.errors.on(:author_last_name)
     assert_equal "This id is already in use", author.errors.on(:author_id)
   end
+  
+  def test_filled_in_author_name
+    author = Author.new(:author_last_name   =>  "",
+                        :author_first_name  =>  "Bob")
+                        
+    assert !author.save
+    assert_equal "This must be filled in", author.errors.on(:author_last_name)
+  end
+  
+  
 end

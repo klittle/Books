@@ -1,6 +1,6 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+Berenstain_Bears_Inside:
   title: The Berenstain Bears Inside Outside Upside Down
   author_last_name: Berenstain
   author_first_name: Jan and Stan
@@ -16,8 +16,8 @@ one:
   author_id: 2
   amazon_url: http://www.amazon.com/Inside-Outside-Upside-Bright-Early/dp/067988632X/ref=sr_1_1?ie=UTF8&s=books&qid=1266097393&sr=1-1-spell
 
-two:
-  title: Moo, Baa, La La La
+Moo_Baa:
+  title: Moo Baa La La La
   author_last_name: Boynton
   author_first_name: Sandra
   isbn: 978-0671449018
@@ -33,11 +33,10 @@ two:
   amazon_url: http://www.amazon.com/Moo-Baa-Sandra-Boynton/dp/067144901X/ref=sr_1_8?ie=UTF8&s=books&qid=1266097571&sr=1-8
   itunes_url:
 
-three:
+Runaway_Bunny:
   title: The Runaway Bunny
   author_last_name: books
-  Brown
-  author_first_name: Margaret Wise
+  author_first_name: Margaret Wise Brown
   isbn: 978-0060775827
   amazon_id: 1266097741
   author_website: 
@@ -51,7 +50,7 @@ three:
   amazon_url: http://www.amazon.com/Runaway-Bunny-Margaret-Wise-Brown/dp/0060775823/ref=sr_1_1?ie=UTF8&s=books&qid=1266097741&sr=1-1
   itunes_url:
             
-four:
+Very_Hungry_Caterpillar:
   title: The Very Hungry Caterpillar
   author_last_name: Carle
   author_first_name: Eric
@@ -68,7 +67,7 @@ four:
   itunes_url: http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewAudiobook?id=280363317&s=143441   
   amazon_url: http://www.amazon.com/Very-Hungry-Caterpillar-Eric-Carle/dp/0399226907/ref=sr_1_1?ie=UTF8&s=books&qid=1266097868&sr=1-1
 
-five:
+Very_Quiet_Cricket:
   title: The Very Quiet Cricket
   author_last_name: Carle
   author_first_name: Eric
@@ -85,7 +84,7 @@ five:
   amazon_url: http://www.amazon.com/Very-Quiet-Cricket-Eric-Carle/dp/0399218858/ref=sr_1_1?ie=UTF8&s=books&qid=1266098070&sr=1-1
   itunes_url: 
 
-six:
+Enemy_Pie:
   title: Enemy Pie
   author_last_name: Munson
   author_first_name: Derek
@@ -95,7 +94,7 @@ six:
   animal_category: false
   animal_type: false
   price: 10.87
-  description: In this funny yet endearing story, one little boy learns an effective recipes for turning your best enemy into your best friend. Accompanied by charming illustrations, Enemy Pie serves up a sweet lesson in the difficulties and ultimate rewards of making new friends.
+  description: In this funny yet endearing story one little boy learns an effective recipes for turning your best enemy into your best friend. Accompanied by charming illustrations, Enemy Pie serves up a sweet lesson in the difficulties and ultimate rewards of making new friends.
   cover_picture:
   book_id: 1
   author_id: 1
