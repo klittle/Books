@@ -1,11 +1,19 @@
-<h1>New book</h1>
+Add a new book:
+<% form_remote_tag(:update    => "books_count",
+                   :url       => {:controller => '/books',
+                                   :action     => 'new' }) do %>
+                                   
+<p>Title<br/><%= text_field_tag :title %></p>
+<p>ISBN<br/><%= text_field_tag  :isbn %></p>
+<p>Book ID<br/><%= text_field_tag :book_id %></p>
+<p>Author ID<br/><%= text_field_tag :author_id %></p>                               
 
-<% form_for(@book) do |f| %>
-  <%= f.error_messages %>
+    <%= submit_tag 'Save' %>
 
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
 <% end %>
+
+<div id="book_count">
+  <%= render :partial => "books_count"%>
+</div>
 
 <%= link_to 'Back', books_path %>

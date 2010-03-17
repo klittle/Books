@@ -1,8 +1,10 @@
 require 'test_helper'
-fixtures  :books
+
 
 class BookTest < ActiveSupport::TestCase
-
+  
+  fixtures :books 
+  
   test "invalid with empty attributes" do
     book = Book.new
     assert !product.valid?

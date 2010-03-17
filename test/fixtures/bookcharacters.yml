@@ -36,18 +36,14 @@ six:
     animal_category: insect
     animal_type: butterfly
     book_id: 5
-    four:
-        animal_category: four legged
-        animal_type: rabbit
-        book_id: 4
 
-    seven:
-        animal_category: insect
-        animal_type: cricket
-        book_id: 6
+seven:
+    animal_category: insect
+    animal_type: cricket
+    book_id: 6
 
-    eight:
-        animal_category: two legged
-        animal_type: boy
-        book_id: 1
+eight:
+    animal_category: two legged
+    animal_type: boy
+    book_id: 1
         

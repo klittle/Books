@@ -16,6 +16,7 @@
       <% else %>
         <em>Not logged in.</em>
         <%= link_to 'Login', new_session_path %>
+        <%= link_to 'New User', new_user_path %>
       <% end %>
     </div>
     <body id="books">
@@ -26,6 +27,7 @@
         <div id="columns">
           <a href="http://localhost:3000/authors">Authors</a><br />
           <a href="http://localhost:3000/books">Books</a><br />
+           <a href="http://localhost:3000/books/save_book">Add New Book</a><br />
           <a href="http://localhost:3000/bookcharacters">Animals in Books</a><br />
           <a href="http://localhost:3000/users">New User Sign Up</a><br />
         </div>  

@@ -34,71 +34,72 @@ two:
   itunes_url:
 
 three:
-    title: The Runaway Bunny
-    author_last_name: Brown
-    author_first_name: Margaret Wise
-    isbn: 978-0060775827
-    amazon_id: 1266097741
-    author_website: 
-    animal_category: false
-    animal_type: false
-    price: 8.99
-    description: A little bunny keeps running away from his mother in an imaginative game of verbal hide-and-seek. Children will be profoundly comforted by this lovingly steadfast mother who finds her child every time.
-    cover_picture: 
-        book_id: 4
-        author_id: 4   
-        amazon_url: http://www.amazon.com/Runaway-Bunny-Margaret-Wise-Brown/dp/0060775823/ref=sr_1_1?ie=UTF8&s=books&qid=1266097741&sr=1-1
-        itunes_url:
+  title: The Runaway Bunny
+  author_last_name: books
+  Brown
+  author_first_name: Margaret Wise
+  isbn: 978-0060775827
+  amazon_id: 1266097741
+  author_website: 
+  animal_category: false
+  animal_type: false
+  price: 8.99
+  description: A little bunny keeps running away from his mother in an imaginative game of verbal hide-and-seek. Children will be profoundly comforted by this lovingly steadfast mother who finds her child every time.
+  cover_picture: 
+  book_id: 4
+  author_id: 4   
+  amazon_url: http://www.amazon.com/Runaway-Bunny-Margaret-Wise-Brown/dp/0060775823/ref=sr_1_1?ie=UTF8&s=books&qid=1266097741&sr=1-1
+  itunes_url:
             
 four:
-            title: The Very Hungry Caterpillar
-            author_last_name: Carle
-            author_first_name: Eric
-            isbn: 978-0399226908
-            amazon_id: 1266097868
-            author_website: 
-            animal_category: false
-            animal_type: false
-            price: 7.91
-            description: Children will be fascinated by the caterpillar‚Äôs varied diet and miraculous transformation into a beautiful butterfly.
-            cover_picture:
-                book_id: 5
-                author_id: 5 
-                itunes_url: http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewAudiobook?id=280363317&s=143441   
-                amazon_url: http://www.amazon.com/Very-Hungry-Caterpillar-Eric-Carle/dp/0399226907/ref=sr_1_1?ie=UTF8&s=books&qid=1266097868&sr=1-1
+  title: The Very Hungry Caterpillar
+  author_last_name: Carle
+  author_first_name: Eric
+  isbn: 978-0399226908
+  amazon_id: 1266097868
+  author_website: 
+  animal_category: false
+  animal_type: false
+  price: 7.91
+  description: Children will be fascinated by the caterpillar‚Äôs varied diet and miraculous transformation into a beautiful butterfly.
+  cover_picture:
+  book_id: 5
+  author_id: 5 
+  itunes_url: http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewAudiobook?id=280363317&s=143441   
+  amazon_url: http://www.amazon.com/Very-Hungry-Caterpillar-Eric-Carle/dp/0399226907/ref=sr_1_1?ie=UTF8&s=books&qid=1266097868&sr=1-1
 
 five:
-                    title: The Very Quiet Cricket
-                    author_last_name: Carle
-                    author_first_name: Eric
-                    isbn: 978-0399218859
-                    amazon_id: 1266098070
-                    author_website: 
-                    animal_category: false
-                    animal_type: false
-                    price: 9.99
-                    description: Your child will delight in the surprise at the end of the book and in knowing that every creature can find its voice, however silent or joyous.
-                    cover_picture: 
-                        book_id: 6
-                        author_id: 5
-                        amazon_url: http://www.amazon.com/Very-Quiet-Cricket-Eric-Carle/dp/0399218858/ref=sr_1_1?ie=UTF8&s=books&qid=1266098070&sr=1-1
-                        itunes_url: 
+  title: The Very Quiet Cricket
+  author_last_name: Carle
+  author_first_name: Eric
+  isbn: 978-0399218859
+  amazon_id: 1266098070
+  author_website: 
+  animal_category: false
+  animal_type: false
+  price: 9.99
+  description: Your child will delight in the surprise at the end of the book and in knowing that every creature can find its voice, however silent or joyous.
+  cover_picture: 
+  book_id: 6
+  author_id: 5
+  amazon_url: http://www.amazon.com/Very-Quiet-Cricket-Eric-Carle/dp/0399218858/ref=sr_1_1?ie=UTF8&s=books&qid=1266098070&sr=1-1
+  itunes_url: 
 
 six:
-                          title: Enemy Pie
-                          author_last_name: Munson
-                          author_first_name: Derek
-                          isbn: 978-0811827782
-                          amazon_id: 1266096933
-                          author_website: MyString
-                          animal_category: false
-                          animal_type: false
-                          price: 10.87
-                          description: In this funny yet endearing story, one little boy learns an effective recipes for turning your best enemy into your best friend. Accompanied by charming illustrations, Enemy Pie serves up a sweet lesson in the difficulties and ultimate rewards of making new friends.
-                          cover_picture: MyString
-                          book_id: 1
-                          author_id: 1
-                          amazon_url: http://www.amazon.com/Enemy-Pie-Reading-Rainbow-book/dp/081182778X/ref=sr_1_1?ie=UTF8&s=books&qid=http://www.amazon.com/Enemy-Pie-Reading-Rainbow-book/dp/081182778X/ref=sr_1_1?ie=UTF8&s=books&qid=1266096933&sr=1-1&sr=1-1
-                          itunes_url: http://itunes.apple.com/us/app/id355474406?mt=8
+  title: Enemy Pie
+  author_last_name: Munson
+  author_first_name: Derek
+  isbn: 978-0811827782
+  amazon_id: 1266096933
+  author_website: MyString
+  animal_category: false
+  animal_type: false
+  price: 10.87
+  description: In this funny yet endearing story, one little boy learns an effective recipes for turning your best enemy into your best friend. Accompanied by charming illustrations, Enemy Pie serves up a sweet lesson in the difficulties and ultimate rewards of making new friends.
+  cover_picture:
+  book_id: 1
+  author_id: 1
+  amazon_url: http://www.amazon.com/Enemy-Pie-Reading-Rainbow-book/dp/081182778X/ref=sr_1_1?ie=UTF8&s=books&qid=http://www.amazon.com/Enemy-Pie-Reading-Rainbow-book/dp/081182778X/ref=sr_1_1?ie=UTF8&s=books&qid=1266096933&sr=1-1&sr=1-1
+  itunes_url: http://itunes.apple.com/us/app/id355474406?mt=8
  
 

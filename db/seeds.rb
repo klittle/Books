@@ -8,18 +8,7 @@
 #bob = Artist.create! :name => "Bob Dylan", :genre => "Rock"
 #album = bob.albums.create! :name => "The Essential Bob Dylan"
 #album.tracks.create! :number => 1, :name => "Blowin' in the Wind"
-#album.tracks.create! :number => 2, :name => "Don't Think Twice, It's All Right"
-#album.tracks.create! :number => 3, :name => "The Times, They Are A-Changin'"
-#album.tracks.create! :number => 4, :name => "It Ain't Me, Babe"
-#album.tracks.create! :number => 5, :name => "Maggie's Farm"
-#album.tracks.create! :number => 6, :name => "It's All Over Now, Baby Blue"
-#album.tracks.create! :number => 7, :name => "Mr. Tambourine Man"
-#album.tracks.create! :number => 8, :name => "Subterranean Homesick Blues"
-#album.tracks.create! :number => 9, :name => "Like a Rolling Stone"
 
-#album = bob.albums.create! :name => "Together Through Life"
-#album.tracks.create! :number => 1, :name => "Beyond Here Lies Nothin'"
-#album.tracks.create! :number => 1, :name => "Life is Hard"
 
 
 
@@ -41,8 +30,7 @@ bookcharacter = book.bookcharacter.create! :animal_category => "eight", :animal_
 
 boynton = Author.create! :author_last_name => "Boynton", :author_first_name => "Sandra" 
 book = boynton.books.create! :title => "Moo, Baa, La La La", :isbn => "978-0671449018", :amazon_id => "1266097571", :price => "7.91", :description => "This is a fun rhyming book with brilliant illustrations and animal sounds for you to make.", :book_id => "8",
-:author_id => "3", 
-:itunes_url => "http://www.amazon.com/Moo-Baa-Sandra-Boynton/dp/067144901X/ref=sr_1_8?ie=UTF8&s=books&qid=1266097571&sr=1-8"
+:author_id => "3", :itunes_url => "http://www.amazon.com/Moo-Baa-Sandra-Boynton/dp/067144901X/ref=sr_1_8?ie=UTF8&s=books&qid=1266097571&sr=1-8"
 bookcharacter = book.bookcharacter.create! :animal_category => "fourlegged", :animal_type => "cow", :book_id => "8"
 bookcharacter = book.bookcharacter.create! :animal_category => "fourlegged", :animal_type => "sheep", :book_id => "8"
 

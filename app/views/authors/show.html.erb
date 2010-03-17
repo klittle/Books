@@ -1,7 +1,7 @@
 
 <h1>Listing authors</h1>
 
-<%#= will_paginate @authors%>
+
 
 
 <% @authors.each do |author| %>
@@ -16,7 +16,7 @@
     <td><%= link_to 'Edit', edit_author_path(author) %></td>
     <td><%= link_to 'Destroy', author, :confirm => 'Are you sure?', :method => :delete %></td>
   </div>
-  #</div> should other div be here instead of after h3
+  </div>
 <% end %>
 
 

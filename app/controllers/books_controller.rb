@@ -13,7 +13,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.xml
   def show
-    @book = Book.find(params[:id])
+    #@book = Book.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +25,8 @@ class BooksController < ApplicationController
   # GET /books/new.xml
   def new
     @book = Book.new
+    
+    count_books
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,6 +34,14 @@ class BooksController < ApplicationController
     end
   end
 
+  
+  def save_book
+    books.create(params[:book_count]) #not sure about this line
+    count_books #name of private method after destroy
+    render :partial => "books_count"
+  end
+
+    
   # GET /books/1/edit
   def edit
     @book = Book.find(params[:id])
@@ -71,8 +81,6 @@ class BooksController < ApplicationController
     end
   end
 
-  # DELETE /books/1
-  # DELETE /books/1.xml
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
@@ -82,4 +90,5 @@ class BooksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
 end
