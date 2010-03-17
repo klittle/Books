@@ -1,7 +1,6 @@
 class AuthorsController < ApplicationController
 
-  # GET /authors
-  # GET /authors.xml
+
   def index
     @authors = Author.all
 
@@ -11,8 +10,6 @@ class AuthorsController < ApplicationController
     end
   end
 
-  # GET /authors/1
-  # GET /authors/1.xml
   def show
     @author = Author.find(params[:id])
 
@@ -22,8 +19,6 @@ class AuthorsController < ApplicationController
     end
   end
 
-  # GET /authors/new
-  # GET /authors/new.xml
   def new
     @author = Author.new
 

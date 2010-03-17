@@ -1,14 +1,14 @@
 Add a new book:
-<% form_remote_tag(:update    => "books_count",
-                   :url       => {:controller => '/books',
-                                   :action     => 'new' }) do %>
+<% form_remote_tag :update    => "books_count",
+                    :url       => {:controller => 'books',
+                                   :action     => "save_book" } do %>
                                    
 <p>Title<br/><%= text_field_tag :title %></p>
 <p>ISBN<br/><%= text_field_tag  :isbn %></p>
 <p>Book ID<br/><%= text_field_tag :book_id %></p>
 <p>Author ID<br/><%= text_field_tag :author_id %></p>                               
 
-    <%= submit_tag 'Save' %>
+    <%= submit_tag 'Create' %>
 
 <% end %>
 

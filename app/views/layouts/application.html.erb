@@ -27,16 +27,16 @@
         <div id="columns">
           <a href="http://localhost:3000/authors">Authors</a><br />
           <a href="http://localhost:3000/books">Books</a><br />
-           <a href="http://localhost:3000/books/save_book">Add New Book</a><br />
+          <%= link_to "Add New Book", new_book_path %></a><br/>
           <a href="http://localhost:3000/bookcharacters">Animals in Books</a><br />
           <a href="http://localhost:3000/users">New User Sign Up</a><br />
         </div>  
-        <div id="main">
-   <ul id="navigation">
-      <li><%#= link_to 'Home Page', "/books" %></li>
-      <li><%#= link_to 'Find Books about an Animal', bookcharacters_path %></li>
-      <li><%#= link_to 'Submit a Book Review' %></li>
-    </ul>
+          <div id="main">
+          <ul id="navigation">
+        <%#= link_to 'Home Page', "/books" %>
+        <%#= link_to 'Find Books about an Animal', bookcharacters_path %>
+        <%#= link_to 'Submit a Book Review' %>
+        </ul>
    </div>
     <div id="content">
       <% if flash[:notice]%>
