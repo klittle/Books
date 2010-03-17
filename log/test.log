@@ -170,3 +170,36 @@ test/unit/book_test.rb:1
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = '--- :id
+') [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT "authors".id FROM "authors" WHERE ("authors"."author_id" = 10) LIMIT 1[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT "authors".id FROM "authors" WHERE ("authors"."author_id" = 10) LIMIT 1[0m
+  [4;35;1mAuthor Create (0.2ms)[0m   [0mINSERT INTO "authors" ("author_last_name", "created_at", "updated_at", "website", "author_first_name", "author_id", "book_id", "itunes") VALUES('Silverstein', '2010-03-17 05:33:18', '2010-03-17 05:33:18', NULL, 'Shel', 10, NULL, NULL)[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT "authors".id FROM "authors" WHERE ("authors"."author_id" = 10) LIMIT 1[0m
+  [4;35;1mAuthor Create (0.3ms)[0m   [0mINSERT INTO "authors" ("author_last_name", "created_at", "updated_at", "website", "author_first_name", "author_id", "book_id", "itunes") VALUES('Silverstein', '2010-03-17 05:33:57', '2010-03-17 05:33:57', NULL, 'Shel', 10, NULL, NULL)[0m
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 907524771) [0m
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 907524771) [0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT "authors".id FROM "authors" WHERE ("authors"."author_id" = 1) LIMIT 1[0m
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 907524771) [0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT "authors".id FROM "authors" WHERE ("authors"."author_id" = 1) LIMIT 1[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT "authors".id FROM "authors" WHERE ("authors"."author_id" = 10) LIMIT 1[0m
+  [4;35;1mAuthor Create (0.3ms)[0m   [0mINSERT INTO "authors" ("author_last_name", "created_at", "updated_at", "website", "author_first_name", "author_id", "book_id", "itunes") VALUES('Silverstein', '2010-03-17 05:54:24', '2010-03-17 05:54:24', NULL, 'Shel', 10, NULL, NULL)[0m
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 907524771) [0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT "authors".id FROM "authors" WHERE ("authors"."author_id" = 1) LIMIT 1[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT "authors".id FROM "authors" WHERE ("authors"."author_id" = 10) LIMIT 1[0m
+  [4;35;1mAuthor Create (0.2ms)[0m   [0mINSERT INTO "authors" ("author_last_name", "created_at", "updated_at", "website", "author_first_name", "author_id", "book_id", "itunes") VALUES('Silverstein', '2010-03-17 06:04:23', '2010-03-17 06:04:23', NULL, 'Shel', 10, NULL, NULL)[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT "authors".id FROM "authors" WHERE ("authors"."author_id" = 1) LIMIT 1[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT "authors".id FROM "authors" WHERE ("authors"."author_id" = 10) LIMIT 1[0m
+  [4;35;1mAuthor Create (0.3ms)[0m   [0mINSERT INTO "authors" ("author_last_name", "created_at", "updated_at", "website", "author_first_name", "author_id", "book_id", "itunes") VALUES('Silverstein', '2010-03-17 06:05:19', '2010-03-17 06:05:19', NULL, 'Shel', 10, NULL, NULL)[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT "authors".id FROM "authors" WHERE ("authors"."author_id" = 1) LIMIT 1[0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT "authors".id FROM "authors" WHERE ("authors"."author_id" = 10) LIMIT 1[0m
+  [4;35;1mAuthor Create (0.3ms)[0m   [0mINSERT INTO "authors" ("author_last_name", "created_at", "updated_at", "website", "author_first_name", "author_id", "book_id", "itunes") VALUES('Silverstein', '2010-03-17 06:05:46', '2010-03-17 06:05:46', NULL, 'Shel', 10, NULL, NULL)[0m
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT "authors".id FROM "authors" WHERE ("authors"."author_id" = 1) LIMIT 1[0m

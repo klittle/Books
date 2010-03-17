@@ -18046,3 +18046,29 @@ Completed in 155ms (View: 14, DB: 2) | 200 OK [http://localhost/rails/info/prope
   [4;36;1mSQL (2.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100213223626')[0m
   [4;35;1mSQL (2.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100213223701')[0m
   [4;36;1mSQL (2.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100213224529')[0m
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-03-16 21:25:27) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 22) LIMIT 1[0m
+  [4;36;1mBook Load (1.4ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (4.3ms)
+Completed in 27ms (View: 10, DB: 2) | 200 OK [http://localhost/books]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-16 21:25:27) [GET]
+
+ActionController::RoutingError (No route matches "/images/LLlogohere.jpg" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
