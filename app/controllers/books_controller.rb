@@ -38,7 +38,7 @@ class BooksController < ApplicationController
 
   
   def save_book
-    @book = Book.new(params[:book])
+    @book = Book.new(params[:id])
       if @book.save
         @book_count = 1 
         @count_books = @book_count + 1 #name of private method after destroy

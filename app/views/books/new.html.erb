@@ -1,7 +1,8 @@
 Add a new book:
-<% form_remote_tag :update    => "books_count",
+<% form_remote_tag  :update    => "books_count",
                     :url       => {:controller => 'books',
                                    :action     => "save_book" } do %>
+ 
                                    
 <p>Title<br/><%= text_field_tag :title %></p>
 <p>ISBN<br/><%= text_field_tag  :isbn %></p>
@@ -12,8 +13,9 @@ Add a new book:
 
 <% end %>
 
+
+
 <div id="book_count">
   <%= render :partial => "books_count"%>
 </div>
 
-<%= link_to 'Back', books_path %>

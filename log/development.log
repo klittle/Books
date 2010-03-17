@@ -21936,3 +21936,415 @@ ActionView::TemplateError (undefined method `total_pages' for #<Array:0x103776e9
 Rendered rescues/_trace (48.1ms)
 Rendered rescues/_request_and_response (0.3ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-03-17 13:23:59) [GET]
+  [4;36;1mBook Load (1.7ms)[0m   [0;1mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (5.8ms)
+Completed in 22ms (View: 12, DB: 2) | 200 OK [http://localhost/books]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-17 13:23:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/LLlogohere.jpg" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2010-03-17 13:24:03) [GET]
+Rendering template within layouts/application
+Rendering books/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size) on line #14 of app/views/books/new.html.erb:
+11:     <%= submit_tag 'Create' %>
+12: 
+13: <% end %>
+14: Total books:  <%=@books.size %>
+15: <div id="book_count">
+16:   <%= render :partial => "books_count"%>
+17: </div>
+
+    app/views/books/new.html.erb:14
+    app/controllers/books_controller.rb:29:in `new'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (110.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2010-03-17 13:27:10) [GET]
+Rendering template within layouts/application
+Rendering books/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.count) on line #14 of app/views/books/new.html.erb:
+11:     <%= submit_tag 'Create' %>
+12: 
+13: <% end %>
+14: Total books:  <%=@books.count %>
+15: <div id="book_count">
+16:   <%= render :partial => "books_count"%>
+17: </div>
+
+    app/views/books/new.html.erb:14
+    app/controllers/books_controller.rb:29:in `new'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2010-03-17 13:49:34) [GET]
+Rendering template within layouts/application
+Rendering books/new
+
+ActionView::TemplateError (undefined method `total' for nil:NilClass) on line #14 of app/views/books/new.html.erb:
+11:     <%= submit_tag 'Create' %>
+12: 
+13: <% end %>
+14: Total books:  <%=@books.total %>
+15: <div id="book_count">
+16:   <%= render :partial => "books_count"%>
+17: </div>
+
+    app/views/books/new.html.erb:14
+    app/controllers/books_controller.rb:29:in `new'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (87.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2010-03-17 13:54:55) [GET]
+Rendering template within layouts/application
+Rendering books/new
+
+ActionView::TemplateError (undefined method `total' for nil:NilClass) on line #14 of app/views/books/new.html.erb:
+11:     <%= submit_tag 'Create' %>
+12: 
+13: <% end %>
+14: Total books:  <%=@books.total %>
+15: <div id="book_count">
+16:   <%= render :partial => "books_count"%>
+17: </div>
+
+    app/views/books/new.html.erb:14
+    app/controllers/books_controller.rb:29:in `new'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (119.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2010-03-17 13:54:57) [GET]
+Rendering template within layouts/application
+Rendering books/new
+
+ActionView::TemplateError (undefined method `total' for nil:NilClass) on line #14 of app/views/books/new.html.erb:
+11:     <%= submit_tag 'Create' %>
+12: 
+13: <% end %>
+14: Total books:  <%=@books.total %>
+15: <div id="book_count">
+16:   <%= render :partial => "books_count"%>
+17: </div>
+
+    app/views/books/new.html.erb:14
+    app/controllers/books_controller.rb:29:in `new'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-03-17 13:55:39) [GET]
+  [4;35;1mBook Load (1.7ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (4.2ms)
+Completed in 17ms (View: 7, DB: 2) | 200 OK [http://localhost/books]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-17 13:55:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/LLlogohere.jpg" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2010-03-17 13:55:43) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Rendered books/_books_count (0.1ms)
+Completed in 20ms (View: 10, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-17 13:55:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/LLlogohere.jpg" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#save_book (for 127.0.0.1 at 2010-03-17 13:56:01) [POST]
+  Parameters: {"commit"=>"Create", "title"=>"Pot Pie 3", "isbn"=>"7899", "authenticity_token"=>"u795bVOoQkgeMnkI+XFhV3T4qeM5fG5Ge57MW5kHf5c=", "book_id"=>"35", "author_id"=>"35"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" IS NULL) LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template books/save_book.erb in view path app/views):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2010-03-17 14:01:39) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Rendered books/_books_count (1.0ms)
+Completed in 172ms (View: 152, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-17 14:01:40) [GET]
+
+ActionController::RoutingError (No route matches "/images/LLlogohere.jpg" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-03-17 14:07:23) [GET]
+  [4;35;1mBook Load (1.7ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (4.4ms)
+Completed in 18ms (View: 8, DB: 2) | 200 OK [http://localhost/books]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-17 14:07:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/LLlogohere.jpg" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2010-03-17 14:07:27) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Rendered books/_books_count (0.1ms)
+Completed in 19ms (View: 10, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-17 14:07:27) [GET]
+
+ActionController::RoutingError (No route matches "/images/LLlogohere.jpg" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#save_book (for 127.0.0.1 at 2010-03-17 14:07:44) [POST]
+  Parameters: {"commit"=>"Create", "title"=>"ff", "isbn"=>"234", "authenticity_token"=>"u795bVOoQkgeMnkI+XFhV3T4qeM5fG5Ge57MW5kHf5c=", "book_id"=>"234", "author_id"=>"234"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" IS NULL) LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template books/save_book.erb in view path app/views):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BooksController#index (for 127.0.0.1 at 2010-03-17 14:10:36) [GET]
+  [4;35;1mBook Load (1.8ms)[0m   [0mSELECT * FROM "books" [0m
+Rendering template within layouts/application
+Rendering books/index
+Rendered books/_book (7.3ms)
+Completed in 22ms (View: 11, DB: 2) | 200 OK [http://localhost/books]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-17 14:10:36) [GET]
+
+ActionController::RoutingError (No route matches "/images/LLlogohere.jpg" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#new (for 127.0.0.1 at 2010-03-17 14:10:53) [GET]
+Rendering template within layouts/application
+Rendering books/new
+Rendered books/_books_count (0.1ms)
+Completed in 15ms (View: 5, DB: 0) | 200 OK [http://localhost/books/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-17 14:10:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/LLlogohere.jpg" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing BooksController#save_book (for 127.0.0.1 at 2010-03-17 14:11:13) [POST]
+  Parameters: {"commit"=>"Create", "title"=>"Pot Pie 5", "isbn"=>"567", "authenticity_token"=>"u795bVOoQkgeMnkI+XFhV3T4qeM5fG5Ge57MW5kHf5c=", "book_id"=>"567", "author_id"=>"567"}
+  [4;36;1mBook Load (0.2ms)[0m   [0;1mSELECT "books".id FROM "books" WHERE ("books"."isbn" IS NULL) LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template books/save_book.erb in view path app/views):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
