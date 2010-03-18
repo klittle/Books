@@ -12,11 +12,11 @@ class AuthorsController < ApplicationController
 
   def show
     @author = Author.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @author }
-    end
+    #respond_to do |format|
+      #format.html  
+      #format.xml  { render :layout => false,
+                    #:xml => @author }
+    #end
   end
 
   def new
@@ -36,7 +36,7 @@ class AuthorsController < ApplicationController
   # POST /authors
   # POST /authors.xml
   def create
-    @author = Author.new(params[:author])
+    @author = Author.new(params[:id])
 
     respond_to do |format|
       if @author.save
@@ -58,7 +58,7 @@ class AuthorsController < ApplicationController
     respond_to do |format|
       if @author.update_attributes(params[:author])
         flash[:notice] = 'Author was successfully updated.'
-        format.html { redirect_to(@author) }
+        format.html { redirect_to(@authors) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

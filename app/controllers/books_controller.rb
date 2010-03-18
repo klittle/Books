@@ -54,7 +54,7 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.xml
   def create
-    @book = Book.new(params[:book])
+    @book = Book.create! params[:book]
 
     respond_to do |format|
       if @book.save

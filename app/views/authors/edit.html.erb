@@ -1,12 +1,20 @@
 <h1>Editing author </h1>
 
-<% form_for(@author) do |f| %>
+<% form_for (@author) do |f| %>
+  <%= f.error_messages %>
+  
   <%= f.text_field  :author_last_name%>
   <%= f.text_field  :author_first_name%>
-  <%= f.error_messages %>
-
+  
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit  'Update' %>
+  </p>
+  <body>
+    <div id="main">
+      <% if flash[:notice] -%>
+    <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
+  <div>
   </p>
 <% end %>
 

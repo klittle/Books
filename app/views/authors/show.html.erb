@@ -1,21 +1,13 @@
 
 <h1>Listing authors</h1>
 
-
-
-
-<% @authors.each do |author| %>
-  <div class="item">
-  <h3>
-  <%= link_to author.name, author %>
-  </h3>
-  </div>
+<% @authors.each do |f| %>
+  <% f.error.messages %>
   
   <div class="actions">
     <td><%= link_to 'Back', authors_path %></td>
     <td><%= link_to 'Edit', edit_author_path(author) %></td>
     <td><%= link_to 'Destroy', author, :confirm => 'Are you sure?', :method => :delete %></td>
-  </div>
   </div>
 <% end %>
 

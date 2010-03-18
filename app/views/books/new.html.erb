@@ -1,21 +1,31 @@
-Add a new book:
-<% form_remote_tag  :update    => "books_count",
-                    :url       => {:controller => 'books',
-                                   :action     => "save_book" } do %>
- 
-                                   
-<p>Title<br/><%= text_field_tag :title %></p>
-<p>ISBN<br/><%= text_field_tag  :isbn %></p>
-<p>Book ID<br/><%= text_field_tag :book_id %></p>
-<p>Author ID<br/><%= text_field_tag :author_id %></p>                               
+<h1>Add a New Book</h1>
 
-    <%= submit_tag 'Create' %>
+<% form_for @book, :html => {:multipart => true} do |f| %> 
+  <%= error_messages_for :books %>
+  
+  <p>
+    <%= f.label  :title %>
+    <%= f.text_field :title %>
+   </p> 
+   <p>
+    <%= f.label  :isbn %>
+    <%= f.text_field  :isbn %>
+    </p>
+    <%= f.label  :book_id %>
+    <%= f.text_field :book_id %>
+    <p>
+    <%= f.label  :author_id %>
+    <%= f.text_field :author_id %>
+    </p>
+    <%= f.label  :author_last_name %>
+    <%= f.text_field :author_last_name %>
+    <p>  
+    <%= f.label  :author_first_name %>
+    <%= f.text_field :author_first_name %>                             
+    </p>
+
+    <%= f.submit  "Create" %>
+  </p>
 
 <% end %>
-
-
-
-<div id="book_count">
-  <%= render :partial => "books_count"%>
-</div>
 

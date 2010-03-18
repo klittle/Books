@@ -1,11 +1,7 @@
 <div class='book'>
   <div class="book_heading">
-		<div class="sorter">
-			 <%#=h sort %> 
-		</div>
 		<h2 span class='header'>	Title & Price</span h2>
 		<span class="paginate">
-			<%#=will_paginate @books %>
 		</span>
 	</div>
 	<% @books.each do |book|%>
@@ -13,7 +9,6 @@
 		<div class='small_book_cover'>
 			<%#= image_tag book.cover_picture%>
 		</div>
-		<br> </br>
 		<div class='book_title'>
 			  <%=h book.title %>
 		</div>
@@ -24,20 +19,13 @@
 		<div class='book_price'>
 			  <%=h book.price %>
    <div class='book_character'>
-			  <%#= %>
 		</div>
 	</div>
 	<% end %>
      <div class= 'float_fix'>&nbsp;
   </div>
 </div>
-<tr>
-	<td><%#= link_to 'Show', book %></td>
-	<td><%#= link_to 'Edit', edit_book_path(book) %></td>
-	<td><%#= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete %></td>
-</tr>
-<%# end %>
-<%#= link_to 'New book', new_book_path %>
+
 
 
 

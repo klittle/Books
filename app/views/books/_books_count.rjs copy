@@ -1,4 +1,4 @@
-page.replace_html 'books_count', "Book Total: #{@books.size}"
+page.replace_html '1', "Book Total: #{1}"
 
 
 
