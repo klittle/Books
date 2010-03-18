@@ -58,9 +58,9 @@ class AuthorsController < ApplicationController
     respond_to do |format|
       if @author.update_attributes(params[:author])
         flash[:notice] = 'Author was successfully updated.'
-        format.html { redirect_to(@authors) }
+        format.html { redirect_to (authors_url) }
         format.xml  { head :ok }
-      else
+      else 
         format.html { render :action => "edit" }
         format.xml  { render :xml => @author.errors, :status => :unprocessable_entity }
       end
