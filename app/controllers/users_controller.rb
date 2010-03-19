@@ -3,15 +3,18 @@ class UsersController < ApplicationController
   # GET /users.xml
   def index
     @users = User.find(:all, :order => params[:order])
-      respond_to do |wants|
-        wants.html do
-          render 
-        end
-        wants.js do
-          render :layout => false
-        end
-      end
+    # render :layout => false
+    respond_to do |wants|
+    wants.html do
+      render
+    end
+    wants.js do
+      render :partial => "users/users", :object => @users, :layout => false
+    end
    end
+  end
+
+
   # GET /users/1
   # GET /users/1.xml
   def show
@@ -19,7 +22,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @user }
+      #format.xml  { render :xml => @user }
+      format.xml  { render :xml => @book }
     end
   end
 

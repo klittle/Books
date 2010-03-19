@@ -3,8 +3,8 @@
      <table class="users">
        
     <% form_remote_tag :url => users_path, 
-                     :update => ".users-container",
-                     :method => :get do %>
+                       :update => ".users-container",
+                       :method => :get do %>
    
     <b>Sort by</b> 
     <%= select_tag "order", options_for_select(["login", "email"]) %>
@@ -13,10 +13,9 @@
    
    </table>
   <div class="users-container">
-    <%= render :partial => "users/users", :object => @user %>
+    <%= render :partial => "users/users", :object => @users %>
   </div>    
 
 <br/>
-
 <p><%= link_to 'Is Your Name Here? If so, then Log In', new_session_path %></p>
 <%= link_to 'If Not, Add Your Name', new_user_path %>
