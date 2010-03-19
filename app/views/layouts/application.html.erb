@@ -26,11 +26,11 @@
         <%= @page_title || "Learners Lane Bookshop" %>
       </div>
         <div id="columns">
-          <a href="http://localhost:3000/authors">Authors</a><br />
-          <a href="http://localhost:3000/books">Books</a><br />
+          <%= link_to "Authors", authors_path %><br/>
+          <%= link_to "Books", books_path %><br/>
           <%= link_to "Add New Book", new_book_path %></a><br/>
-          <a href="http://localhost:3000/bookcharacters">Animals in Books</a><br />
-          <a href="http://localhost:3000/users">New User Sign Up</a><br />
+          <%= link_to "Animals in Books", bookcharacters_path %></a><br/>          
+          <%= link_to "New User Sign Up", users_path %></a><br/>          
         </div>  
           <div id="main">
           <ul id="navigation">
