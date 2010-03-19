@@ -1,0 +1,13 @@
+
+<table class="users">
+  <tr>
+    <th>User Sorted List</th>
+    </tr>
+    <% users.each do |user| %>
+      <tr id="users_<%=user.id %>"> 
+        <td class="user"><%=h user.login %> </td>
+        <td class="email"><%=h user.email %></td>
+      </tr>
+<% end %>
+
+
