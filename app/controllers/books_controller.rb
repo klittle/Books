@@ -32,19 +32,6 @@ class BooksController < ApplicationController
     end
   end
   
-  def count
-    render :text => "<p>I hope this works<p>"
-  end
-
-  
-  def save_book
-    @book = Book.new(params[:id])
-      if @book.save
-        @book_count = 1 
-        @count_books = @book_count + 1 #name of private method after destroy
-        render :partial => "books_count"
-      end
-  end
   
   # GET /books/1/edit
   def edit
@@ -88,11 +75,16 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(books_url) }
-      format.xml  { head :ok }
+    render :update do |book|
+        book << "$('#book_#{@book.id}').remove()"
     end
   end
-  
+
 end
+
+
+
+
+
+
+

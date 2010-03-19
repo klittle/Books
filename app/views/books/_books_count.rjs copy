@@ -1,4 +1,0 @@
-page.replace_html '1', "Book Total: #{1}"
-
-
-

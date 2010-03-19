@@ -1,16 +1,9 @@
 <h1>Children's Books</h1>
-<%= render (:partial => 'book') %>
-  <tr>
-    <td><%= link_to 'Show', "/books" %></td>
-
-    <td><%#= link_to 'Edit', edit_book_path(@book) %></td>
-    <td><%#= link_to 'Destroy', @book, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<%= render :partial => "booka", :object => @books %>
 
 
 
 
-<%#= link_to "New book", new_book_path %>
 
 
 

@@ -4,23 +4,26 @@
   <%= error_messages_for :books %>
   
   <p>
-    <%= f.label  :title %>
+    <%= f.label      :title %>
     <%= f.text_field :title %>
    </p> 
    <p>
-    <%= f.label  :isbn %>
+    <h3>This must be a unique number</h3>
+    <%= f.label       :isbn %>
     <%= f.text_field  :isbn %>
     </p>
-    <%= f.label  :book_id %>
+    <h3>This must be a unique number</h3>
+    <%= f.label      :bookid %>
     <%= f.text_field :book_id %>
     <p>
-    <%= f.label  :author_id %>
+    <h3>This must be a unique number</h3>
+    <%= f.label      :authorid %>
     <%= f.text_field :author_id %>
     </p>
-    <%= f.label  :author_last_name %>
+    <%= f.label      :author_last_name %>
     <%= f.text_field :author_last_name %>
     <p>  
-    <%= f.label  :author_first_name %>
+    <%= f.label      :author_first_name %>
     <%= f.text_field :author_first_name %>                             
     </p>
 
